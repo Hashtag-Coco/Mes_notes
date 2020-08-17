@@ -28,13 +28,13 @@ cat /etc/networks
 
 #### User
 last
-w
 cat /etc/passwd | cut -d: -f1
 grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'
-ls -ahlR /root/
-ls -ahlR /home/
-cat ~/.bashrc
-cat ~/.profile
+ls /home/
+
+#### Voir les tâches planifiées
+crontab -l
+cat /etc/cron*
 
 #### Connaitre les permissions 
 sudo -l
@@ -42,6 +42,26 @@ cat /etc/sudoers
 
 #### Voir les partitions
 df -h
+
+#### Password mining
+history
+cat ~/.bash_history
+cat ~/.nano_history
+cat ~/.atftp_history
+cat ~/.mysql_history
+cat ~/.php_history
+ls -l /etc/passwd
+ls -l /etc/shadow
+grep -RiIn passw / 2>/dev/null
+grep -rnw '/' -ie 'pass' --color=always 2>/dev/null | grep -vi binary
+grep -rnw '/' -ie 'DB_PASS' --color=always 2>/dev/null | grep -vi binary
+grep -rnw '/' -ie 'DB_PASSWORD' --color=always 2>/dev/null | grep -vi binary
+grep -rnw '/' -ie 'DB_USER' --color=always 2>/dev/null | grep -vi binary
+
+[[[ cp /etc/passwd .
+cp /etc/shadow .
+unshadow passwd shadow > unshadowed
+john --format=md5crypt unshadowed ]]]
 
 ###################################################################### Windows
 #### OS
