@@ -27,3 +27,6 @@ $ theHarvester -d <domain> -l 300 -b all -f output
 
 #### Info sur l'ip
 $ curl ipinfo.io/{IP]
+
+#### Info sur un pseudonyme
+$ python3 sherlock.py {pseudonyme}
