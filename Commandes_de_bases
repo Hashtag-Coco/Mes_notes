@@ -1,0 +1,78 @@
+###################################################################### Linux
+#### Connaitre l'OS
+cat /etc/issue
+cat /etc/*-release
+cat /proc/version
+uname -a
+rpm -q kernel
+dmesg | grep Linux
+ls /boot | grep vmlinuz-
+lsb_release -a
+
+#### Processus 
+ps auxww
+ps -ef
+
+#### Fichier actuellement ouvert 
+lsof -i
+
+#### Port ouvert
+netstat -laputen
+
+#### Info réseau
+cat /etc/network/interfaces
+cat /etc/sysconfig/network
+cat /etc/resolv.conf
+cat /etc/sysconfig/network
+cat /etc/networks
+
+#### User
+last
+w
+cat /etc/passwd | cut -d: -f1
+grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'
+ls -ahlR /root/
+ls -ahlR /home/
+cat ~/.bashrc
+cat ~/.profile
+
+#### Connaitre les permissions 
+sudo -l
+cat /etc/sudoers
+
+#### Voir les partitions
+df -h
+
+###################################################################### Windows
+#### OS
+ver
+wmic os get bootdevice, buildnumber, caption, freespaceinpagingfiles, installdate, name, systemdrive, windowsdirectory
+
+#### Connaitre les drivers
+DRIVERQUERY
+
+#### Lister les disques
+wmic logicaldisk get name, deviceid, volumename, description
+
+#### Lister les partages
+wmic share list
+
+####Info sur le réseau
+ipconfig /all
+
+#### Lister les ports ouverts
+netstat -ano
+
+#### Lister les utilisateurs
+net users
+
+#### Lister les groupes
+net localgroup 
+
+#### Lister les processus / créer un processus / détruire un processus
+wmic process list brief
+wmic process call create {commande}
+wmic process where processid="{pid}" delete
+
+#### Lister les taches planifiées
+schtasks /query /fo LIST /v
