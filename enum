@@ -1,0 +1,40 @@
+# Directory fuzzing
+$ dirb http://{target}/ /usr/share/worlists/dirb/big.txt -o dirb.txt
+$ dirb http://{target}/ /usr/share/wordlists/dirb/big.txt -X .php,.html -o dirb.txt
+$ gobuster -u http://{target} -w /usr/share/wordlists/dirb/big.txt -t 100
+$ dirsearch -u http://{target} -e php
+$ nikto -h http://{target}
+$ gobuster -u http://{target} -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20
+$ dirsearch -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -e all -f -t 1000 -u https://{TARGET}
+$ python3 /git/dirsearch/dirsearch.py -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -e "php,txt,sh,jar,cgi,pl,py,php.swp,~,bak" -f -t 20 --simple-report=dirsearch -u {TARGET}
+
+# Check WPS
+wpscan -u http://{target}/ --enumerate t --enumerate p --enumerate u
+wpscan –u http://{target} --username {UserName} --wordlist {wordlist}
+
+# DNS transfert de zone
+$ dnsrecon -d {domain.com} -t axfr @ns1.{domain.com}
+$ dnsenum {domain.com}
+
+# Enumération des sous-domaines d'un domaine
+$ python sublist3r.py -d {domain.com}
+
+# Information RPC
+$ rpcinfo -p {target}
+
+# netbios scan show logged in users/addresses
+$ nbtscan {target}
+$ nbtscan {networkAddr/masq}
+
+# SAMBA fingerprint version
+$ smbclient -L //{target}
+
+# SAMBA minimal scan / everything
+$ enum4linux {target}
+$ enum4linux -a {target}
+
+# SAMBA enumerate users
+$ nmap -sU -sS --script=smb-enum-users -p U:137,T:139 {networkAddr/masq}
+
+# Scan file type by method (vérifier les méthodes allowed)
+$ davtest -url http://{target}
