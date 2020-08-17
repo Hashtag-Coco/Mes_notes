@@ -24,3 +24,6 @@ $ netdiscover -i {interface}
 
 #### OSINT, ne pas oublier qu'il existe Maltego et les googles dork
 $ theHarvester -d <domain> -l 300 -b all -f output
+
+#### Info sur l'ip
+$ curl ipinfo.io/{IP]
