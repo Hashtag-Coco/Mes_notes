@@ -19,6 +19,9 @@ $ nmap -A -T4 -Pn {target}
 -sP {XXX.XXX.XXX.XXX/XX} = ping scan (network scan, skip host discovery, only shows hosts that respond)
 -S {ip} = spoof ip address
 
+####Dans certain cas de NMAP
+$ nmap  -p1-65535 {target}
+
 #### Probing Neighbors
 $ netdiscover -i {interface}
 
