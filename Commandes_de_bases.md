@@ -105,7 +105,7 @@ $ john --format=md5crypt unshadowed
 > wmic share list
 ```
 
-##Info sur le réseau
+## Info sur le réseau
 ```bash
 > ipconfig /all
 ```
@@ -125,10 +125,17 @@ $ john --format=md5crypt unshadowed
 > net localgroup 
 ```
 
-## Lister les processus / créer un processus / détruire un processus
+## Processus
+Lister les processus
 ```bash
 > wmic process list brief
+```
+Créer un processus
+```bash
 > wmic process call create {commande}
+```
+Détruire un processus
+```bash
 > wmic process where processid="{pid}" delete
 ```
 
