@@ -77,7 +77,7 @@ $ simplyemail.py -all -e domain.com
 ```bash
 $ nmap -A -T4 -Pn {target}
 ```
--p {1-65535} = port
+-p {1-65535} = port </br>
 -O = OS detection
 -sV = version detection
 -sU = UDP scan
