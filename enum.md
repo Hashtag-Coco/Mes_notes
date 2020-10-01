@@ -78,16 +78,16 @@ $ simplyemail.py -all -e domain.com
 $ nmap -A -T4 -Pn {target}
 ```
 -p {1-65535} = port </br>
--O = OS detection
--sV = version detection
--sU = UDP scan
--sT = tcp scan
--A = OS detection + nmap scripts + traceroute + version
--F = fast scan
--T{0-5} = scan timing slow to fast
--sn {XXX.XXX.XXX.XXX/XX} = ping scan (network scan, disable port scan, assume all hosts up)
--sP {XXX.XXX.XXX.XXX/XX} = ping scan (network scan, skip host discovery, only shows hosts that respond)
--S {ip} = spoof ip address
+-O = OS detection</br>
+-sV = version detection</br>
+-sU = UDP scan</br>
+-sT = tcp scan</br>
+-A = OS detection + nmap scripts + traceroute + version</br>
+-F = fast scan</br>
+-T{0-5} = scan timing slow to fast</br>
+-sn {XXX.XXX.XXX.XXX/XX} = ping scan (network scan, disable port scan, assume all hosts up)</br>
+-sP {XXX.XXX.XXX.XXX/XX} = ping scan (network scan, skip host discovery, only shows hosts that respond)</br>
+-S {ip} = spoof ip address</br>
 
 Dans certain cas, des ports peuvent ne pas apparaitre donc on rajoute l'option p :
 ```bash
