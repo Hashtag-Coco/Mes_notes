@@ -1,13 +1,21 @@
-#### Identifier un hash
+## Identifier un hash
+```bash
 $ hash-identifier {hash}
+```
 
-# Décoder du base64
+## Décoder du base64
+```bash
 $ echo "message_en_b64" | base64 -d
+```
 
-#### Wordlist generation
-# Generer une wordlist avec des combinaisons de 6 caractères avec les caractères 0,1,2,3...
+## Générer une Wordlist
+Avec crunch, generer une wordlist avec des combinaisons de 6 caractères avec les caractères de 0 à 9 et A à F  :
+```bash
 $ crunch 6 6 0123456789ABCDEF -o crunch.txt
+```
 
-#### Cracker un fichier
+## Cracker un fichier
+```bash
 $ john {fichier} --wordlist=/usr/share/wordlists/rockyou.txt
 $ fcrackzip -D -p /usr/share/wordlists/rockyou.txt {fichier}
+```
