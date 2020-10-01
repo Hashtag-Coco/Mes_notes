@@ -1,4 +1,5 @@
 ## Enumeration de dossier et de page d'un site WEB
+======
 ```bash
 $ dirb http://{target}/ /usr/share/wordlists/dirb/big.txt -X .php,.html -o dirb.txt
 $ nikto -h http://{target}
