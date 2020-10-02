@@ -14,7 +14,7 @@ Avec crunch, generer une wordlist avec des combinaisons de 6 caractères avec le
 $ crunch 6 6 0123456789ABCDEF -o crunch.txt
 ```
 
-## Cracker un fichier
+## Cracker un fichier demandant un mot de passe
 ```bash
 $ john {fichier} --wordlist=/usr/share/wordlists/rockyou.txt
 $ fcrackzip -D -p /usr/share/wordlists/rockyou.txt {fichier}
