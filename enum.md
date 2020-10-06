@@ -40,6 +40,12 @@ $ smbclient -L //{target}
 $ nmap -p 445 -vv --script=smb-enum-shares.nse,smb-enum-users.nse <ip>
 ```
 
+## Check si une liste d'utilisateur existe
+La cible enface est un kerberos (port 389)
+```bash
+$ kerbrute_linux_386 userenum --dc {TARGET_IP} -d {NAME.local} listes_user.txt --safe -v
+```
+
 ## SAMBA minimal scan / everything
 ```bash
 $ enum4linux {target}
