@@ -62,6 +62,11 @@ $ nmap -sU -sS --script=smb-enum-users -p U:137,T:139 {networkAddr/masq}
 $ davtest -url http://{target}
 ```
 
+## NFS shares which are available
+```bash
+$ showmount -e 10.10.10.10
+```
+
 ## Monter un partage smb distant en utilisant CIFS
 ```bash
 $ mount-t cifs "//<ip>/<targeted share>/" /mnt 
