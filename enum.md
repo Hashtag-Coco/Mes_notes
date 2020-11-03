@@ -73,6 +73,11 @@ $ mount-t cifs "//<ip>/<targeted share>/" /mnt
 $ smbget -R smb://<ip>/<share>/<path>/<file>
 ```
 
+## Obtenir un tgt
+```bash
+python3 GetNPUsers.py nom_de_la_machine/ -no-pass -usersfile user.txt
+```
+
 ## Basic information
 ```bash
 $ whois domain.com
