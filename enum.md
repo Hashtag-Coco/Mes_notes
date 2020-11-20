@@ -72,6 +72,10 @@ $ showmount -e 10.10.10.10
 $ mount-t cifs "//<ip>/<targeted share>/" /mnt 
 $ smbget -R smb://<ip>/<share>/<path>/<file>
 ```
+```bash
+$ mkdir Data
+$ mount.cifs //X.X.X.X/Data ./Data -o user=USERNAME
+```
 
 ## Obtenir un tgt
 ```bash
