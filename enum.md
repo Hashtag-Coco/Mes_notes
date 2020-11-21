@@ -76,6 +76,13 @@ $ smbget -R smb://<ip>/<share>/<path>/<file>
 $ mkdir Data
 $ mount.cifs //X.X.X.X/Data ./Data -o user=USERNAME
 ```
+### Récupérer plusieurs fichiers/dossiers distant
+```bash
+smb > mask ""
+smb > recurse ON
+smb > prompt OFF
+smb > mget *
+```
 
 ## Obtenir un tgt
 ```bash
