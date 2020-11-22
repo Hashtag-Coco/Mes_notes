@@ -1,7 +1,7 @@
 # Notes sur l'OWASP testing guide
 ## Sommaire :
-- [Vocabulaire](##Vocabulaire)
-- [Passive and Active Testing](##Passive%20and%20Active%20Testing)
+- [Vocabulaire](## Vocabulaire)
+- [Passive and Active Testing](## Passive and Active Testing)
 
 </br>
 <!-- toc -->
