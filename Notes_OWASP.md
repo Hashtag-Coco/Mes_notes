@@ -6,9 +6,9 @@
   * [Active Testing](#active-testing)
   
 ## Vocabulaire
-Tester = Who performs the testing activities.
-Threat = It's anything that can may harm the assets owned by an application.
-Vulnerability = It's a flaw or weakness in a operation/implementation/management..
+Tester = Who performs the testing activities.</br>
+Threat = It's anything that can may harm the assets owned by an application.</br>
+Vulnerability = It's a flaw or weakness in a operation/implementation/management..</br>
 Gates = access points of an application.
 ```bash
 Un risque est quelque chose que tu n'aimerais pas qui se produise, mais parfois, il se produit.
