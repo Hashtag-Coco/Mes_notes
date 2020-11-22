@@ -72,6 +72,17 @@ $ showmount -e 10.10.10.10
 $ mount-t cifs "//<ip>/<targeted share>/" /mnt 
 $ smbget -R smb://<ip>/<share>/<path>/<file>
 ```
+```bash
+$ mkdir Data
+$ mount.cifs //X.X.X.X/Data ./Data -o user=USERNAME
+```
+### Récupérer plusieurs fichiers/dossiers distant
+```bash
+smb > mask ""
+smb > recurse ON
+smb > prompt OFF
+smb > mget *
+```
 
 ## Obtenir un tgt
 ```bash
