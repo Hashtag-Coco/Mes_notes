@@ -4,7 +4,6 @@
 - [Passive and Active Testing](#passive-and-active-testing)
   * [Passive Testing](#passive-testing)
   * [Active Testing](#active-testing)
-- [Information Gathering](#information-gathering)
   
 ## Vocabulaire
 Tester = Who performs the testing activities.
@@ -80,3 +79,37 @@ dans le robots.txt.</br>
 
 ### Enumerate applications on Webserver
 Beaucoup d'applications ont des vulnérabilités, il faut donc identifier ces applications.</br>
+#### Different Base URL
+Pour une application web, le point d'entré est www.example.com. Mais parfois il faut bien retenir que certaine application web sont
+sous la forme www.example.com/url1 ou www.example.com/url2 directement (redirection).
+
+#### Non-standard ports
+Les ports web sont 80 et 443, mais parfois les services peuvent tourner sur d'autre ports (>1024).
+
+#### Virtual Hosts
+Important, le DNS peut permettre à une adresse IP d'être associée à plusieurs nom symbollique. En réalisant des transferts de zones DNS,
+on peut parfois déterminer les différents noms associés à l'IP.
+
+### Review Webpage Comments and Metadata for information leakage
+C'est plutot commun pour les developpeurs d'inclure des commentaires et metadonnées détaillés dans le code source de la page.
+Cela peut être une source d'information.
+
+### Identify Application Entry Points
+L'énumération de l'application et sa surface d'attaque est primordiale lors du test.</br>
+Pour identifier les gates, il faut bien comprendre chaque interaction entre l'application et nous. Il faut faire attention aux 
+paramètres et aux inputs que l'on peut avoir sur le site. Également aux paramètres dans une requete POST (paramètres qui peuvent faire du leakage).</br>
+In a nutshell, faire attention à :
+* Identifier où les GET et POST sont utilisées.
+* Identifier les paramètres utilisés en POST (paramètres qui sont issues du form).
+* Dans la requête POST, faire attention aux hidden parameters.
+* Identifier tous les paramètres dans une GET requête (I.E. URL), en particulier les chaine de caractère de recherche (après un ?).
+* Identifier les paramètres dans une requête de recherche, en général par pair (foo=bar) et leur séparateur.
+* Faire attention à tout autre header personnalisé (debug=False).
+* En réponse, Identifier où les nouveaux cookies sont situés (Set-Cookie header), modifiés ou ajoutés.
+* En réponse, Identifier, où sont les redirects (3XX status code), 400 status codes, 403 en particulier et 500.
+* En réponse, noter les headers non-communs ("Server: BIG-IP").
+</br>
+Il existe des softs pour détecter automatiquement les surfaces d'attaques (ASD en java).</br>
+Exemples page 69 de l'OWASP testing guide.
+
+### Map Execution Paths Through Application
