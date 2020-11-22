@@ -2,7 +2,8 @@
 ## Sommaire :
 - [Vocabulaire](#vocabulaire)
 - [Passive and Active Testing](#passive-and-active-testing)
-
+  * [Passive Testing](#passive-testing)
+  * [Active Testing](#active-testing)
 ## Vocabulaire
 Tester = Who performs the testing activities.
 Threat = It's anything that can may harm the assets owned by an application.
