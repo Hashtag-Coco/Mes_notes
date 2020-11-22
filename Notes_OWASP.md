@@ -1,7 +1,7 @@
 # Notes sur l'OWASP testing guide
 ## Sommaire :
-- [Vocabulaire](#Voc)
-- [Passive and Active Testing](#Pas)
+- [Vocabulaire](##%20Vocabulaire)
+- [Passive and Active Testing](##%20Passive%20and%20Active%20Testing)
 
 ## Vocabulaire
 Tester = Who performs the testing activities.
