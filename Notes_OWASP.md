@@ -4,6 +4,8 @@
 - [Passive and Active Testing](#passive-and-active-testing)
   * [Passive Testing](#passive-testing)
   * [Active Testing](#active-testing)
+- [Information Gathering](#information-gathering)
+  
 ## Vocabulaire
 Tester = Who performs the testing activities.
 Threat = It's anything that can may harm the assets owned by an application.
@@ -46,16 +48,6 @@ Durant un test actif, le tester va utiliser la methodologie suivante (chaque ét
 * Client Side Testing
 </br>
 
-## Information Gathering
-L'information gathering est l'act de récolter des informations contre une victime/un SI.</br>
-Google Dork pour optimiser ses recherche :
-```bash
-site:	limiter les recherches à l'url
-inurl:		only result that include keyword in URL
-intitle:	only result that include keyword in page title
-intext:		only result with keyword in the body of pages
-filetype:	only match specific filetype
-```
 ```bash
 https://www.exploit-db.com/google-hacking-database
 ```
