@@ -116,4 +116,49 @@ Il existe des softs pour détecter automatiquement les surfaces d'attaques (ASD 
 Exemples page 69 de l'OWASP testing guide.
 
 ### Fingerprint Web Application Framework
+Connaitre le Framework que le site utilise peut nous donner des idées sur les vulnérabilités connus pas encore patchées ou encore les 
+misconfigurations communes.</br>
+Quelques pistes :
+* HTTP headers
+* Cookies
+* HTML source code
+* Specific files and folders
+* file extension
+* Error message
+</br>
+Plusieurs exemple page 77.
+
+#### HTTP headers
+La façon la plus commune pour identifier le framework est le champ **X-Powered-By** dans l'entête HTTP (d'une réponse). Il y a 
+egalement le champ **X-Generator**.
+
+#### Cookies 
+Suivant le nom qu'est donné au cookie, on peut connaitre le framework qui le gère.
+
+#### HTML source code
+Certain pattern de code dans une page HTML peuvent appartenir à un framework bien précis.
+
+#### Spécific files and folders
+Le nommage des fichiers et dossiers est différent pour chaque framework, des dictionnaires existent pour les reconnaitres.
+
+#### File extension
+Dans l'URL, la plupart du temps nous pouvons savoir si le site utilise du php, aspx, jsp ou autre.</br>
+Exemple : www.example.com/index.php?id=12345
+
+#### Error message
+Tout simplement, le nom du framework peut s'afficher en grand dans le cadre d'une erreur.
+
+## Configuration and Deployement Management Testing
+### Test Network Infrastructure Configuration
+### Test Application Platform Configuration
+### Test file extension Handling for Sensitive Information
+### Review old backup and Unreferenced files for Sensitive information
+### Enumerate infrastructure and Application Admin Interfaces
+### Test HTTP Methods
+### Test HTPP Strict Transport Security
+### Test RIA Cross Domain Policy
+### Test File Permission
+### Test for Subdomain takeover
+### Test Cloud Storage
+
 
