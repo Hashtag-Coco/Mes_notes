@@ -1,4 +1,5 @@
 # Notes sur l'OWASP testing guide
+
 ## Sommaire :
 - [Vocabulaire](#vocabulaire)
 - [Passive and Active Testing](#passive-and-active-testing)
@@ -51,6 +52,8 @@ Durant un test actif, le tester va utiliser la methodologie suivante (chaque ét
 https://www.exploit-db.com/google-hacking-database
 ```
 ^ Ce lien nous renvoi sur exploit-db qui regroupe les google dorks efficace pour certaines recherches...</br>
+## Information gathering
+
 ### Fingerprint WebServer
 Cette étape a pour but d'identifier le type et la version du serveur web.</br>
 #### Banner Grabbing
@@ -112,4 +115,5 @@ In a nutshell, faire attention à :
 Il existe des softs pour détecter automatiquement les surfaces d'attaques (ASD en java).</br>
 Exemples page 69 de l'OWASP testing guide.
 
-### Map Execution Paths Through Application
+### Fingerprint Web Application Framework
+
