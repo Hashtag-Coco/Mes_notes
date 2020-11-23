@@ -149,14 +149,68 @@ Exemple : www.example.com/index.php?id=12345
 Tout simplement, le nom du framework peut s'afficher en grand dans le cadre d'une erreur.
 
 ## Configuration and Deployement Management Testing
-### Test Network Infrastructure Configuration
-### Test Application Platform Configuration
 ### Test file extension Handling for Sensitive Information
+Les extensions de fichiers sont très utiles pour connaitre les technologies/langages et plugins utilisés par le serveur web.</br>
+Pour tester, il suffit de bruteforce les extensions jusqu'a découvrir les bons. Les extensions suivantes peuvent contenir des 
+informations sensibles :
+* .asa
+* .inc
+* .config
+
 ### Review old backup and Unreferenced files for Sensitive information
+Bien souvent, on peut trouver des fichiers oubliés ou non-référencés sur le site web. Cela peut aller aux fichiers simples jusqu'au 
+backup :
+* .tar
+* .zip
+* .gz 
+* .bak
+* .old
+* ~
+
 ### Enumerate infrastructure and Application Admin Interfaces
+Il est toujours bon de vérifier si il y a une interface pour les administrateurs :
+* /admin
+* /administrator
+Egalement, parfois on a pas accès ce dossier/fichier, mais on a accès plus loins (/admin/test.txt en 200).</br>
+A noter que tous les framework web possèdent une interface pour les admins :
+* /admin pour WebSphere
+* /phpmyadmin pour PHP
+* /wp-admin/ pour wordpress
+et d'autre pages 111.
+
 ### Test HTTP Methods
+HTTP permet plusieurs methode d'accès à une ressource suivant ce que l'on veut faire, exemple :
+* GET
+* POST 
+* HEAD
+* PUT
+* DELETE
+* TRACE
+Ces commandes peuvent être utilisées pour obtenir pleins d'informations sur le site web (XST par exemple).</br>
+#### Arbitrary HTTP methods
+Si on tente des méthodes qui n'existent pas, suivant l'erreur retournée par le serveur, nous pouvons tenter des choses (CSRF).</br>
+Pages 115/116.
+
+#### Head access control Bypass
+Visiter une page qui requiert une authentification nous redirige (302) vers une log page. Néanmoins, si en utilisant HEAD nous avons un 200 OK,
+il est possible de faire du CSRF.</br>
+Pages 116.
+
 ### Test HTPP Strict Transport Security
+HSTS header, est un mecanisme qui permet aux sites de communiquer avec les navigateurs en obligeant du HTTPS. Il est reconnu avec le champ :
+"Strict-transport-Security: max-ages=15768000; includeSubDomains". Pour tester sa présence, il faut regarder ses réponses.
+
 ### Test RIA Cross Domain Policy
+Rich Internet Applications est une API qui est executé sur un navigateur web. Depuis qu'elle utilise Adobe crossdomain.xml policy file, il y a 
+une possibilité de compromettre un autre domaine à partir du domaine compromit.</br>
+Conséquences :
+* Permissions cross-domain trop légères dans la policy.
+* Generer des réponses serveur qui peuvent être traitées comme des cross-domain policy files.
+* Fonctionnalitée Upload qui peut uploader des fichiers considérés en tant que cross-domain policy files.
+* Protection CSRF réduite à 0.
+* Plus de restrictions/protections. 
+Exemple de test pages 120.
+
 ### Test File Permission
 ### Test for Subdomain takeover
 ### Test Cloud Storage
