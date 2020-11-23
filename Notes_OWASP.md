@@ -209,10 +209,38 @@ Conséquences :
 * Fonctionnalitée Upload qui peut uploader des fichiers considérés en tant que cross-domain policy files.
 * Protection CSRF réduite à 0.
 * Plus de restrictions/protections. 
+Généralement, le fichier est à la racine du site :
+* example.com/crossdomain.xml
+* example.com/clientaccesspolicy.xml
 Exemple de test pages 120.
 
-### Test File Permission
 ### Test for Subdomain takeover
+Une exploitation reussie permet à l'attaquant de prendre le control d'un sous domaine. Le principe de l'attaque est le suivant :
+* Un record DNS du sous-domaine de la victime pointe vers un non-existant/non-actif endpoint/external service ou ressource.
+Une fois le takeover effectué, plusieurs attaques peuvent s'y dérouler :
+* Malicious content.
+* Phishing.
+* stealing user session cookies.
+* stealing credentials.
+
+Plusieurs exemples page 122+
+
 ### Test Cloud Storage
+Il arrive que les applications web soient hébergées dans un cloud. De mauvaises permissions peuvent se résoudrent en sensitive information 
+exposure, alternation de données ou accès non-authorisé.</br>
+Une liste de test :
+* Identifier l'URL pour avoir accès aux datas puis :
+* Essayer de lire des données.
+* Upload un fichier.
+Un exemple pour lire et upload un fichier :
+```bash
+$ curl -X GET https://<cloud-storage-service>/<object>
+$ curl -X PUT 'd 'test' 'https://<cloud-storage-service>/test.txt'
+```
 
-
+## Identity Management Testing
+### Test Role Definitions
+### Test User Registration Process
+### Test Account Provisioning Process
+### Testing for Account Enumeration and Guessable User Account
+### Testing for Weak or Unenforced Username Policy
