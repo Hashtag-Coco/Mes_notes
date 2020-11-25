@@ -240,7 +240,136 @@ $ curl -X PUT 'd 'test' 'https://<cloud-storage-service>/test.txt'
 
 ## Identity Management Testing
 ### Test Role Definitions
-### Test User Registration Process
-### Test Account Provisioning Process
+Les roles définitions se basent sur les droits entre un administrateur, un manager, un staff et un customer.</br>
+Test : un utilisateur n'est pas censé aller sur du /admin.
+
 ### Testing for Account Enumeration and Guessable User Account
+Les usernames sont facilement bruteforcable pour les deviner.</br>
+Pour tester :
+* Essayer un identifiant et mot de passe correct.
+* Essayer un identifiant correct mais pas le mot de passe.
+* Essayer un identifiant et mode de passe incorrect.
+
 ### Testing for Weak or Unenforced Username Policy
+Généralement, les noms d'utilisateurs se ressemblent tous (j.smith ...).
+
+## Authentication Testing
+### Testing for Credentials Transported over an Encrypted Channel
+Credentials transport veux dire que l'authentification de l'utilisateur est effectué par un canal chiffré au cas ou un hacker intercepte le
+traffic.</br>
+Test :
+* Via la methode HTTP.
+* Si dans la requête POST, nous avons un Referer-header en http (cela permet un SSLStrip)
+
+### Testing for Default Credentials
+On test simplement le couple identifiant/mot de passe par défaut de l'application.
+
+### Testing for Weak Lock Out Mechanisme
+Le mécanisme de Lock out est ce mécanisme qui bloque un compte si il y a trop de tentative pour y acéder. 
+La conséquence est le brute force. Après un nombre de tentative considérable, soit le brute force va faire tomber le serveur
+soit il va réussir à deviner le mot de passe.
+
+### Testing for Testing for Vulnerable Renember Password
+Ici, on parle des mot de passes qui sont en mémoire, soit par la case "rester connecté" ou soit par un password manager.
+Test :
+* ClickJacking attack
+* CSRF attack.
+
+### Testing for Browser cache Weaknesses
+Dans cette étape, le tester vérifie si le navigateur web ne contient pas de données sensibles.
+
+### Testing for Weak password Policy
+Selon la policy qui est appliqué, nous pouvons essayer de retrouver des mots de passes tels que 123456789 ou password ou motdepasse.
+Test :
+* Chercher les mots de passes les plus utilisés et les tester.
+
+### Testing for Weak Security Question Answer
+Parfois pour reset son mot de passe, un utilisateur utilise une question de sécurité, selon la question,
+on peut bruteforcer la réponse ou alors faire de l'OSINT.
+Exemple :
+* Nom du chien ?
+* Un animal ?
+* Une ville ?
+
+### Testing for Testing for Weak Password Change or reset Functionalities
+Suivant la robustesse de la sécurité du changement de mot de passe de l'utilisateur, une attack CSRF peut avoir lieu.
+
+### Testing for Weaker Authentication in Alternative Channel
+Il suffit de configurer un user agent pour se faire passer pour un téléphone, dans certain cas, la sécurité est diminuée.
+Un exemple vaut mille mots :
+* La sécurité pour accéder à https://www.example.com/myaccount n'est pas la même que http://m.example.com/myaccount
+
+## Authorization Testing
+### Testing Directory Traversal File Include
+Directory traversal, c'est le principe de pouvoir se déplacer à partir d'une URL, d'un cookie ou autre élément que le serveur web nous as envoyé. </br>
+Interesting variable name :
+* example.com/index.php?file=content
+* example.com/main.cgi?home=index.html
+* example.com/getUserProfile.jsp?item=ikki.html
+
+Interresting cookie :
+* Cookie: ID=fd4sdfsdf5df5d4:TMP=1324567564:LM=4545646:S=df4df5df45:TEMPLATE=flower
+* Cookie: USER=234154:PSTYLE:GreenDotRed 
+
+Testing techniques :
+* index.php?file=../../../../etc/passwd
+* index.php?file=http://10.10.10.10:8000
+
+URL encoding and double URL encoding :
+* %2e%2e%2f représente ../
+* %2e%2e/ représente ../
+* ..%2f représente ../
+
+### Testing for Privilège Escalation
+Un utilisateur lambda qui par misconfiguration du serveur web, peut créer/modifier du contenu qui n'est pas à lui (où qu'il n'était
+pas censé voir).</br>
+Exemple dans une requête POST.
+
+### Testing for Insecure Direct Object References
+"IDOR occur when an application provides direct access to objects based on user-suplied input." Cette vulnérabilité permet à l'attaquant
+de bypasser une authentification en accédant directement à une ressource en modifiant l'URL.</br>
+Exemple :
+* example.com/somepage?invoice=12345 to invoice=4567
+
+## Session Management Testing
+### Testing for Session Management Schema
+### Testing for Cookies Attributes
+### Testing for Session Fixation
+### Testing for Exposed Session variables
+### Testing for Cross Site Request forgery
+### Testing for logout Functionality
+### Testing Session timeout
+### Testing for Session Puzzling
+
+## Input Validation Testing
+### Testing for Reflected Cross Site Scripting
+### Testing for Stored Cross Site Scripting
+### Testing for HTTP Verb Tampering
+### Testing for HTPP Parameter Pollution
+### Testing for SQL Injection
+#### Testing for Oracle
+#### Testing for Mysql
+#### Testing for SQL Server
+#### Testing for PostGRESQL
+#### Testing for MS Access
+#### Testing for NoSQL Injection
+#### Testing for ORM Injection
+#### Testing for Client Side
+### Testing for LDAP Injection
+### Testing for XML Injection
+### Testing for SSI Injection
+### Testing for XPath Injection
+### Testing for IMAP SMTP Injection
+### Testing for Code Injection
+#### Testing for Local File Inclusion
+#### Testing for Remote File Inclusion
+### Testing for Command Injection
+### Testing for Buffer Overflow
+#### Testing for Heap Overflow
+#### Testing for Stack Overflow
+#### Testing for Format string
+### Testing for Incubated Vulnerability
+### Testing for HTTP Splitting Smuggling
+### Testing for HTTP Incoming Requests
+### Testing for Host Header Injection
+### Testing for Server Side Template Injection
