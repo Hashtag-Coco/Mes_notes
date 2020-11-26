@@ -368,6 +368,7 @@ https://medium.com/@maheshlsingh8412/session-puzzling-attack-bypassing-authentic
 
 ## Input Validation Testing
 ### Testing for Reflected Cross Site Scripting
+Reflected Cross Site Scripting 
 ### Testing for Stored Cross Site Scripting
 ### Testing for HTTP Verb Tampering
 ### Testing for HTPP Parameter Pollution
