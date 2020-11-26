@@ -333,13 +333,38 @@ Exemple :
 
 ## Session Management Testing
 ### Testing for Session Management Schema
-### Testing for Cookies Attributes
+La "session management" est un mécanisme qui "retient" la connection de l'utilisateur sur un site web. Le cookie a était créé pour cela.</br>
+Suivant la sécurité mise en place, le tester peut vérifier le cookie et le token de session qui sont créés d'une manière secure et imprévue.
+Cependant, un attaquant qui est capable de prédir et créer le cookie, peut facilement faire un hijacking de session.</Br>
+Voici les différentes étapes lors d'une attaque de cookie :
+* cookie collection : collection of a sufficient number of cookie samples.
+* cookie reverse engineering : analysis of the cookie generation algorithm.
+* cookie manipulation : forging of a valid cookie in order to perform the attack. This last step might require a large number of attempts, depending on how the cookie is created (cookie brute-force attack).
+
 ### Testing for Session Fixation
-### Testing for Exposed Session variables
+Lorsque l'application ne semble pas renouveller le cookie de session après une authentification reussie, c'est possible de trouver 
+une "session fixation vulnerability" et de forcer un user à utiliser le cookie connu de l'attaquant.
+Comment est caractérisée la "session fixation vulnerability" :
+* Une application web authentifie un utilisateur sans la première validation si l'ID est existant, et donc continue d'utiliser l'ID de session qui est déjà attribué à quelqu'un.
+* Un attaquant est capable de forcer un ID de session sur un user, donc l'attaquant peut avoir accès à sa session. 
+
+Test :
+* Faire une requête GET
+* Récupérer l'ID de session et l'envoyé dans une nouvelle requête POST.
+* Si c'est un succès, alors la vulnerabilité est présente.
+
+Exemple page 194.
+
 ### Testing for Cross Site Request forgery
-### Testing for logout Functionality
-### Testing Session timeout
-### Testing for Session Puzzling
+La CSRF est l'attaque où l'attaquant force l'utilisateur à effectuer une action sur un site web.</br>
+Elle se repose sur :
+* L'attaquant doit envoyer un lien à un utilisateur.
+* L'utilisateur clique sur le lien.
+Page 200 pour plus d'info.
+
+### Testing for Session Puzzling/Overloading
+Ce principe repose sur l'utilisation d'une même variable afin d'avoir plusieurs utilitées :</br>
+https://medium.com/@maheshlsingh8412/session-puzzling-attack-bypassing-authentication-29f4ff2fd4f5
 
 ## Input Validation Testing
 ### Testing for Reflected Cross Site Scripting
