@@ -368,8 +368,21 @@ https://medium.com/@maheshlsingh8412/session-puzzling-attack-bypassing-authentic
 
 ## Input Validation Testing
 ### Testing for Reflected Cross Site Scripting
-Reflected Cross Site Scripting 
+Reflected Cross Site Scripting, plus connu sous le nom de XSS, se produit lors d'une execution de code lors de l'affichage d'une page web.</br>
+Il existe plusieurs types :
+* XSS Reflected : La plus fréquente, souvent dans une URL, elle n'est pas persistente.
+* XSS stored : La stored est persistente, souvent dans un espace commentaire d'un site.
+* DOM XSS
+
+Test :
+* Les inputs utilisateurs : on peut tester avec du javascript : <script>alert(123)</script> ou encore "><script>alert(document.cookie)</script>
+
+Plusieurs exemples de bypass sont présents pages 214+
+
 ### Testing for Stored Cross Site Scripting
+
+
+
 ### Testing for HTTP Verb Tampering
 ### Testing for HTPP Parameter Pollution
 ### Testing for SQL Injection
