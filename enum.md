@@ -140,3 +140,8 @@ $ curl ipinfo.io/{IP]
 ```bash
 $ python3 sherlock.py {pseudonyme}
 ```
+
+## Récupérer tous les mots d'un site web dans une wordlist
+```bash
+$ cewl --depth 5 -w nom_wordlist http://8.8.8.8.fr/
+```
