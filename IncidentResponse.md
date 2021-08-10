@@ -1,7 +1,7 @@
 #TODO : la mise en forme
 
-## Getting the investigation started on the right foot
-# Incident Summary Checklist
+# Getting the investigation started on the right foot
+## Incident Summary Checklist
 - Record date and time the incident was reported.
 - Contact information of the person documenting this information.
 - Contact information of the person who reported the incident.
@@ -14,7 +14,7 @@
 - Who is aware of the incident.
 - Whether the incident is currently ongoing.
 
-# Incident Detection Checklist
+## Incident Detection Checklist
 - Was the detection through an automated or manual process ? Did a person or an automated system detect the incident ?
 - What information was part of the initial detection (if it's an alert, copy of the alert or if it's from a person, what they saw)?
 - What sources provided the data that contributed to the detection ? (note the timezone).
@@ -23,8 +23,8 @@
 - How long have the detection sources been in operation ? (May be false positive)
 - What are the detection and error rates (May someone did updates recently..) ?
 
-# Collect Additional Details
-Individual System Detail :
+## Collect Additional Details
+### Individual System Detail :
 - Physical location : information that someone outside of your organization would be able to clearly determine where a system is located.
 - The asset tag number.
 - System's make and model.
@@ -40,11 +40,23 @@ Individual System Detail :
 - a list of any remediation steps that have been taken.
 - If any data is being preserved, what process is being used and where it is being stored.
 
-Network details :
+### Network details :
 - A list of all external malicious IP addresses or domain names involved.
 - Whether network monitoring is being conducted (filtering rules etc...).
 - A list of any remediation steps that have been taken.
 - If any data is being preserved, what process is being used and where it is being stored ?
 - Updates to network diagrams and configurations.
 
-Malware details :
+### Malware details :
+For each malicious file related to the incident
+- The date and time of detection.
+- How the malware was detected.
+- The list of systems where the malware was found.
+- The name of the malicious file, and what directory was it present in.
+- What the detection mechanism determined, such as the name and family of the malicious file.
+- If the malware is active during the IR and if active network connections are present.
+- Whether a copy of the malware is preserved, either manually or through a quarantine process.
+- The status of any analysis. Has the malware been analyzed for network and host indicators of compromise.
+- Whether the malware was submitted to third parties, either through automated processes or via direct action by an employee.
+
+Build an attack timeline with all those informations.
