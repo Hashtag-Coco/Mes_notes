@@ -59,4 +59,36 @@ For each malicious file related to the incident
 - The status of any analysis. Has the malware been analyzed for network and host indicators of compromise.
 - Whether the malware was submitted to third parties, either through automated processes or via direct action by an employee.
 
-Build an attack timeline with all those informations.
+(Build an attack timeline with all those informations.)
+
+# Discovering the Scope of the incident
+## Examining Initial Data
+Assemble previous facts/data/informations to provide a better context of the detection event. 
+Logique des 5 W et du H :
+- Who ? Who is the user.
+- What ? What department do they work for. What was the website. What data was transferred.
+- When ? What time of day did it happen.
+- Where ? One department. How many post (location).
+- Why ? Data value.
+- How ? Any website, were the user behind their computers.
+
+## Gathering and Reviewing Preliminary Evidence
+In this step, you have to determine what sources of preliminary evidence may be able to help and then decide which sources you will actually use.
+May consider the following evidence sources (called "independent evidence sources") :
+- Artifacts the malware directly creates on the system, such as files or registry keys.
+- Operating system artifacts such as Windows prefetch, that are indirect artifacts.
+- Application artifacts, such as Internet browser history or software metering tools.
+- Network artifacts, such as firewall logs that might record network connections.
+
+## Determining a Course of Action
+Renember, there is no best way to make a decision or ideal path to solve a case.
+Scoping process :
+- Will the action help answer an investigative question ?
+- Will the action answer my questions quickly ?
+- Am I following the evidence ?
+- Am I putting too much effort into a single theory ?
+- Am I using multiple independent sources of evidence ?
+- Do I understand the level of effort ?
+- Am I staying objective ?
+- Am I tracking the earliest and most recent evidence of compromise ?
+- Have I uncovered something that requires immediate remediation ?
