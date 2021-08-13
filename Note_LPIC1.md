@@ -12,74 +12,74 @@ CD = se déplacer (~ repertoire personnel ; / racine ; . répertoire courant ; .
 LS -al = lister le contenu ( a affiche tous les fichiers ; l affiche le type du fichier, les permissions, le nombre de lien physique, l'horodatage, la taille en octet, le propriétaire et le groupe) </br>
 mount -to = monter un système (t pour le type de SDF ; o pour options) (le fichier /etc/fstab contient les info des SDF)</br>
 ps -eF = afficher l'ensemble des processus actifs ( e pour )</br>
-man 1 <commande> = aide intégré à linux
-  1 - Programmes executables ou commandes de l'interpréteur de commandes (shell)
-  2 - Appels système
-  3 - Appels de bibliothèque (fonctions fournies par les bibliothèques des pro-grammes)
-  4 - Fichiers spéciaux (situés généralement dans /dev)
-  5 - Formats des fichiers et conventions (ex : /etc/passwd)
-  6 - Jeux
-  7 - Divers (y compris les macropaquets et les conventions) (ex : man(7), groff(7))
-  8 - Commandes de gestion du système (généralement réservées au super utilisateur)
-  9 - Sous programmes du noyau
-whereis -b <commande> = voir les fichiers liés à une commande
-info <commande> = même commande que man
-type = type du fichier
+man 1 <commande> = aide intégré à linux </br>
+  1 - Programmes executables ou commandes de l'interpréteur de commandes (shell)</br>
+  2 - Appels système</br>
+  3 - Appels de bibliothèque (fonctions fournies par les bibliothèques des pro-grammes)</br>
+  4 - Fichiers spéciaux (situés généralement dans /dev)</br>
+  5 - Formats des fichiers et conventions (ex : /etc/passwd)</br>
+  6 - Jeux</br>
+  7 - Divers (y compris les macropaquets et les conventions) (ex : man(7), groff(7))</br>
+  8 - Commandes de gestion du système (généralement réservées au super utilisateur)</br>
+  9 - Sous programmes du noyau</br>
+whereis -b <commande> = voir les fichiers liés à une commande</br>
+info <commande> = même commande que man</br>
+type = type du fichier</br>
 
--> variable = association d'une clé à une valeur en mémoire. (par défaut : local)  (exemple : mavariable="bonjour" ; echo $mavariable ; echo ${mavariable})
+-> variable = association d'une clé à une valeur en mémoire. (par défaut : local)  (exemple : mavariable="bonjour" ; echo $mavariable ; echo ${mavariable})</br>
 
-export <référence> = envoi une référence dans l'environnement
-unset <reference> = supprime la référence de l'environnement
+export <référence> = envoi une référence dans l'environnement</br>
+unset <reference> = supprime la référence de l'environnement</br>
 
-variables de paramètres : $1, $2, $3 enregistrent les arguments passés à une commande ; $0 enregistre la commande ayant permis de lancer le programme ; $* enregistre tout les arguments ; $# enregistre le nombre d'arguments
+variables de paramètres : $1, $2, $3 enregistrent les arguments passés à une commande ; $0 enregistre la commande ayant permis de lancer le programme ; $* enregistre tout les arguments ; $# enregistre le nombre d'arguments</br>
 
--> Une commande est un programme ou une partie d'un programme. (identifié dans la variable d'environnement $PATH)
+-> Une commande est un programme ou une partie d'un programme. (identifié dans la variable d'environnement $PATH)</br>
 
-pwd = savoir ou on est
-echo -ne = afficher un message (n pour ne pas faire le saut de ligne final ; e pour interprété les \)
-exec [commande [arguments]] = permet de lancer un programme en arrière plan
+pwd = savoir ou on est</br>
+echo -ne = afficher un message (n pour ne pas faire le saut de ligne final ; e pour interprété les \)</br>
+exec [commande [arguments]] = permet de lancer un programme en arrière plan</br>
 
-Nommage : tilde en fin de fichier = fichier de sauvegarde
+Nommage : tilde en fin de fichier = fichier de sauvegarde</br>
 
-Globbing = ? * [a-z]
+Globbing = ? * [a-z]</br>
 
-cp = copie d'un fichier
-mv = déplacer ou renommer un fichiers
-rm -i = supprimer un fichiers
-touch = créer un fichier vide
-mkdir = créer un répertoire
-rmdir = supprimer un répertoire
-ln -s = créer un lien symbolique
+cp = copie d'un fichier</br>
+mv = déplacer ou renommer un fichiers</br>
+rm -i = supprimer un fichiers</br>
+touch = créer un fichier vide</br>
+mkdir = créer un répertoire</br>
+rmdir = supprimer un répertoire</br>
+ln -s = créer un lien symbolique</br>
 
-STDIN = info qu'on donne à un programme
-STOUT = info que nous renvoi le programme
-STERR = info que nous renvoi les erreurs du programme
+STDIN = info qu'on donne à un programme</br>
+STOUT = info que nous renvoi le programme</br>
+STERR = info que nous renvoi les erreurs du programme</br>
 
-Redirections : > stdout vers un fichier ; >> stdout à la suite d'un fichier ; 2> stderr vers un nouveau fichier ; 2>> stderr à la suite d'un fichier ; &> stdout + stderr ; < stdin depuis un fichier ; << stdin à partir d'une chaine de caractère ; <> stdin et stdout vers et depuis le meme fichier
+Redirections : > stdout vers un fichier ; >> stdout à la suite d'un fichier ; 2> stderr vers un nouveau fichier ; 2>> stderr à la suite d'un fichier ; &> stdout + stderr ; < stdin depuis un fichier ; << stdin à partir d'une chaine de caractère ; <> stdin et stdout vers et depuis le meme fichier</br>
 
--> fichier sans extension sur GNU linux = fichier texte
+-> fichier sans extension sur GNU linux = fichier texte</br>
 
-xargs = permet d'employer chaque sortie d'un programme comme argument d'un autre ( exemple : ls |xargs rm )
-` = permet de remplacer de manière itérative un argument par les sorties d'une commande ( exemple : rm `ls` )
+xargs = permet d'employer chaque sortie d'un programme comme argument d'un autre ( exemple : ls |xargs rm )</br>
+\` = permet de remplacer de manière itérative un argument par les sorties d'une commande ( exemple : rm `ls` )</br>
 
-cat = voir le contenu d'un fichier
-join = fusionne les lignes de deux fichiers
-paste = regrouper les lignes de différents fichiers
-expand = converti les tabulations en espaces
-unexpand = inverse de expand
-sort = trier les lignes d'un fichier
-split = découper un fichier
-tr = traduire ou éliminer des caractères
-uniq = élimine les lignes en doublons
-fmt = équivalent de cat mais avec un meilleur découpage.
-nl = numérote les lignes d'un fichier
-head = Affiche les 10 premières lignes d'un fichier
-tail = Affiche les 10 dernières lignes d'un fichier
-less = Affiche un fichier page par page
-cut = supprimer une partie de chaque ligne d'un fichier
-wc = afficher le nombre d'octets, de mots et de lignes d'un fichier.
-grep -iE = rechercher dans un fichier
-sed = modifier le contenu d'un fichier/flux ligne par ligne
+cat = voir le contenu d'un fichier</br>
+join = fusionne les lignes de deux fichiers</br>
+paste = regrouper les lignes de différents fichiers</br>
+expand = converti les tabulations en espaces</br>
+unexpand = inverse de expand</br>
+sort = trier les lignes d'un fichier</br>
+split = découper un fichier</br>
+tr = traduire ou éliminer des caractères</br>
+uniq = élimine les lignes en doublons</br>
+fmt = équivalent de cat mais avec un meilleur découpage.</br>
+nl = numérote les lignes d'un fichier</br>
+head = Affiche les 10 premières lignes d'un fichier</br>
+tail = Affiche les 10 dernières lignes d'un fichier</br>
+less = Affiche un fichier page par page</br>
+cut = supprimer une partie de chaque ligne d'un fichier</br>
+wc = afficher le nombre d'octets, de mots et de lignes d'un fichier.</br>
+grep -iE = rechercher dans un fichier</br>
+sed = modifier le contenu d'un fichier/flux ligne par ligne</br>
 
 ## Gestion des logiciels
 
