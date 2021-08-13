@@ -10,8 +10,8 @@
 
 CD = se déplacer (~ repertoire personnel ; / racine ; . répertoire courant ; .. répertoire parent ; - dernier répertoire visité)</br>
 LS -al = lister le contenu ( a affiche tous les fichiers ; l affiche le type du fichier, les permissions, le nombre de lien physique, l'horodatage, la taille en octet, le propriétaire et le groupe) </br>
-mount -to = monter un système (t pour le type de SDF ; o pour options) (le fichier /etc/fstab contient les info des SDF)
-ps -eF = afficher l'ensemble des processus actifs ( e pour )
+mount -to = monter un système (t pour le type de SDF ; o pour options) (le fichier /etc/fstab contient les info des SDF)</br>
+ps -eF = afficher l'ensemble des processus actifs ( e pour )</br>
 man 1 <commande> = aide intégré à linux
   1 - Programmes executables ou commandes de l'interpréteur de commandes (shell)
   2 - Appels système
