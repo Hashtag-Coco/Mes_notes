@@ -1,10 +1,11 @@
+# Mes notes pour la LPIC1
 ------------------- Pour chaque commande, se référer au man pour les options ---------------------
 
 -> Linux est un noyau (kernel en anglais). GNU linux est l'ensemble de l'OS.
 
 -> coco@debian:~$ = nom utilisateur @ nom de la machine ~ est le répertoire courant.
 
-================================================================================================================================= Commande GNU/unix
+## Commande GNU/unix
 -> nomdelacommande -options option (format BSD) --options argument1 "argument 2"
 
 CD = se déplacer (~ repertoire personnel ; / racine ; . répertoire courant ; .. répertoire parent ; - dernier répertoire visité)
@@ -79,8 +80,8 @@ cut = supprimer une partie de chaque ligne d'un fichier
 wc = afficher le nombre d'octets, de mots et de lignes d'un fichier.
 grep -iE = rechercher dans un fichier
 sed = modifier le contenu d'un fichier/flux ligne par ligne
-=================================================================================================================================
-================================================================================================================================= Gestion des logiciels
+
+## Gestion des logiciels
 
 dpkg -iRGEc --configure = gestionnaire de paquet debian (R mode recursif / G ne pas installer si une version plus récente du paquet est déjà installée / E ne pas installer si déjà présent/ c chercher les paquets partiellement installés)
 rpm -iVU --allmatches = gestionnaire de paquet
@@ -166,8 +167,8 @@ fsck -ACVNt = vérifier l'intégrité d'un SDF (A vérifie les SDF marqué "à v
 mount -arvwtLUo = associer un fs avec un répertoire (a all ; r ro; v verbose ; w rw ; t fstype ; L label ; U uuid ; o paramètres)
 umount -afrt = démonter le fs (a all ; f force ; r si echec, remonter en ro ; t fstype)
 /etc/fstab : configuration automatique de montage d'un FS
-=================================================================================================================================
-================================================================================================================================= Gestion des fichiers
+
+## Gestion des fichiers
 ls -n = lister les groupes
 chown -R = modifier le propriéaire d'un fichier/dossier (R recursif) (ex : chown root:root mondossier/)
 chgrp = modifier le groupe d'un fichier/dossier
@@ -204,8 +205,9 @@ find -name -perm -size -gid -uuid -maxdepth -type -ok -exec ls; = rechercher des
 #find . \(-name 'test1' -o -name 'test2'\)
 locate = rechercher des fichiers, voir son man
 updatedb = mettre a jour locate
-=================================================================================================================================
-================================================================================================================================= Démarage du Système
+
+## Démarage du Système
+  
 -> BIOS se charge (POST (test de présence et d'intégrité de tout, attribut les ressources nécéssaire) -> MBR (routine de démarrage) -> Bootloader (chargeur d'amorcage) -> kernel + initrd -> linuxrc (chargement des modules et montage de la véritable racine) -> init (lance les processus))
 grub-install <disque_ou_partition> = install du grub, généralement /dev/sda ou /dev/sda1
 /boot/grub/menu.lst ou grub.conf : fichier de configuration de grub 1/legacy
@@ -229,8 +231,8 @@ update-rc.d <service> start XX 2 3 4 5 . stop XX 0 1 6 = modifier le comportemen
 runlevel = affiche le runlevel
 init <0123456Qq>  //  telinit <0123456Qq> = changer de runlevel
 shutdown [-rhc] time ["Warning Message"]   //    halt / # reboot / # poweroff  = eteindre ou redemarrer (ex : shutdown -h +60 "Attention l'ordi va stopper")
-=================================================================================================================================
-================================================================================================================================= Gestion des processus
+
+## Gestion des processus
 
 processus : programme en cours d'execution
 pstree f -wfljuv = voir les processus actifs sous formes d'arbre père/fils (f pour forest ; w ne pas tronquer ; -f full ; l long ; j job control ; u orienté utilisateur ; v mémoire virtuelle)
@@ -248,8 +250,9 @@ kill -l = voir les signaux
 man 7 signal = liste des signaux avec description
 
 nohup <commande> = lancer un programme persistant, continue à fonctionner même après déconnection
-=================================================================================================================================
-================================================================================================================================= Configuration de l'environnement graphique
+
+##  Configuration de l'environnement graphique
+  
 Présentation : Kernel > système de fenêtrage (X window system)(Xorg) > gestionnaire de fenetre (WM)(metacity, openbox) > Environnement de bureau (DE)(KDE, gnome) > interface graphique (gnome shell, unity kde plasma)
 
 serveur x : fonctionne en client/serveur via le protocole XDMCP
@@ -273,8 +276,8 @@ Session à distance :
     xhost +<adresse IP> = rajoute l'hote distant aux hotes acceptés
     export DISPLAY=<adresse IP> = sur l'hote client
 
-=================================================================================================================================
-================================================================================================================================= Gestion des imprimantes et impressions
+
+## Gestion des imprimantes et impressions
 
 Ghostscript : interpreteur PS et PDF, conversion vers le format natif des imprimantes
 lpr -P -# n -J job -m -hr <fichier> = commande d'impression (P imprimante ; r supprimer le fichier après impréssion ; h pas de page de garde ; J précise le nom de tâche ; m mail après impression ; # n nombre de copie)
@@ -296,8 +299,8 @@ cupsdisable <printer> = désactiver l'imprimante
 fichier PPD : description d'une imprimante postscript
 /etc/cups/cupsd.conf : fichier de configuration de cups
 
-=================================================================================================================================
-================================================================================================================================= Administration système
+
+## Administration système
 
 newgrp <groupe> = changer d'identifiant de groupe en cours de session
 groups = afficher le groupe principal puis les groupes auquels on appartient
@@ -355,8 +358,8 @@ at <heure date> = faire une tâche planifié (at 20:00 12/25/13), écrire les co
 atrm <id> = supprimer la tâche planifiée
 atd : démon de at
 
-=================================================================================================================================
-================================================================================================================================= Administration réseaux
+
+## Administration réseaux
 
 ifconfig = ancienne commande
 ip [OPTIONS] OBJECT {COMMAND | help} = Commande centralisé pour de l'administration réseau
@@ -407,8 +410,8 @@ hostname <nom> = change de nom d'hote temporaire
 /etc/hostname = changer le nom d'hote mais de façon persistente
 /etc/resolv.conf : spécifier les serveurs dns
 
-=================================================================================================================================
-================================================================================================================================= Connaissances complémentaires (script bash, BDD, mailing)
+
+## Connaissances complémentaires (script bash, BDD, mailing)
 
 mavariable="valeur"
 paramètres de position : $0, $1, $2, $3...
@@ -448,8 +451,7 @@ mail = voir les mails reçus
 mailq = vérifier la liste d'attente
 /etc/aliases ou /etc/mail/aliases : Redirections
 
-=================================================================================================================================
-================================================================================================================================= Sécurité
+## Sécurité
 
 nmap -sT -sU : Rechercher les ports ouverts (sT TCP ; sU UDP)
 nestast = afficher les connections actives
