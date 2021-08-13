@@ -1,3 +1,4 @@
+# TODO : l'indentation
 # Mes notes pour la LPIC1
 ------------------- Pour chaque commande, se référer au man pour les options ---------------------
 
