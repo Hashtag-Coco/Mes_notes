@@ -91,8 +91,8 @@ yum update/upgrade/check-update/localupdate/info/remove/install/clean  = gestion
 apt = gestionnaire de paquet dont la config est /etc/apt/sources.list
 apt-cache pkgnames <nom du paquet> = Manipuler le cache des paquets (voir lesquels sont installés)
 apt-get update/check/clean/install/remove/dist-upgrade = Manip des paquets
-=================================================================================================================================
-================================================================================================================================= Configuration du matériel
+
+## Configuration du matériel
 
 BIOS : Basic Input Output System, dans la ROM , permet le démarrage du système
 IRQ : interruptions matérielles, permet au proc de gérer plusieurs programmes à la fois (permet au proc de suspendre des processus afin de s'occuper d'autre processus)
